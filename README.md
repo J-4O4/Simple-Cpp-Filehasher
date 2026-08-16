@@ -34,5 +34,5 @@ You can either run Filehasher directly from the directory where the executable i
 
 ## prerequisites
 
-You do not need to install any additional software to use the pre-compiled version of Filehasher provided in this repository. However, Filehasher uses OpenSSL [(Download here)](https://slproweb.com/products/Win32OpenSSL.html) to calculate file hashes.
+**You do not need to install any additional software to use the pre-compiled version** of Filehasher provided in this repository. However, Filehasher uses OpenSSL [(Download here)](https://slproweb.com/products/Win32OpenSSL.html) to calculate file hashes.
 If you want to modify the source code and compile your own version, you will need to install OpenSSL. I recommend using a recent version of OpenSSL. FileHasher uses the newer EVP API for generating hashes, as the older hash APIs have been deprecated in recent OpenSSL versions.
