@@ -31,7 +31,7 @@ Filehasher.exe -h
 `C:\Tools\Filehasher\Filehasher.exe -f "C:\Users\User\Desktop\test.exe" -sha1`
 
 
-## Pre compiled version:
+## For normal users:
 Download the latest `Filehasher.exe` from the **Releases -> Assets** section of this repository. No additional software or compilation is required. The pre-compiled executable can be run directly on Windows. You can also add the directory containing FileHasher.exe to your system's PATH environment variable. This allows you to run FileHasher from any directory in your terminal.
 
 ## Build from Source
