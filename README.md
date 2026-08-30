@@ -3,8 +3,9 @@
 A simple Windows C++ command-line tool for calculating file hashes.
 
 # ⚠️ PLEASE NOTE
-Some antivirus engines currently flag the latest FileHasher release as a potential threat. The previous version of FileHasher was not detected, while the current version receives several detections. I suspect this may be related to the changes in the build configuration, including static linking, which was introduced so that the pre-compiled binary can run without requiring users to install OpenSSL or the compiler runtime separately.
+Some antivirus engines currently flag the latest Filehasher release as a potential threat. The previous version of Filehasher was not detected, while the current version receives several detections. I suspect this may be related to the changes in the build configuration, including static linking, which was introduced so that the pre-compiled binary can run without requiring users to install OpenSSL or the compiler runtime separately.
 I am currently investigating the cause and working on a solution to reduce or eliminate these false positives: [Report](https://www.virustotal.com/gui/file/487072d553fe248177b8eb1832ab6f55782f8e5c8ba8982880aa0ccd548369c2/detection)
+### For now, please use the old version and download it [here](https://github.com/J-4O4/Simple-Cpp-Filehasher/tree/main/Old-safe-version). Please also read [requirements.md](https://github.com/J-4O4/Simple-Cpp-Filehasher/blob/main/Old-safe-version/requirements.md)  
 
 ## Features
 - Calculate file hashes from the command line
