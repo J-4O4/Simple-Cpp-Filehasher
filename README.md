@@ -39,5 +39,8 @@ To build FileHasher from source, you need:
 
 FileHasher uses the OpenSSL EVP API for calculating file hashes.
 
+## Download:
+You can download the binary here: https://github.com/J-4O4/Simple-Cpp-Filehasher/releases/tag/v1.0
+
 ## License
 The Filehasher source code is licensed under the MIT license included in this repository. See [LICENSE](https://github.com/J-4O4/Simple-Cpp-Filehasher/blob/main/LICENSE) for the full license text. 
