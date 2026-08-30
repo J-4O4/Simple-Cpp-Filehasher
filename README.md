@@ -28,8 +28,7 @@ Filehasher.exe -h
 `path/to/Filehasher.exe -f path/test.exe -md5`
 
 **Run FileHasher from another directory:**
-
-C:\Tools\Filehasher\Filehasher.exe -f "C:\Users\User\Desktop\test.exe" -sha1
+`C:\Tools\Filehasher\Filehasher.exe -f "C:\Users\User\Desktop\test.exe" -sha1`
 
 
 ## Pre compiled version:
