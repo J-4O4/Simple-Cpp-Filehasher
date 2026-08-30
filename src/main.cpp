@@ -19,26 +19,37 @@ void calculate_hash(const unsigned char* data, size_t length, char type[]) {
         chosen_hash = "SHA-256";
         if (EVP_DigestInit_ex(context, EVP_sha256(), nullptr) != 1) {
             EVP_MD_CTX_free(context);
+            return;
         }
     }
     else if(strcmp(type, "-md5") == 0){
         chosen_hash = "MD5";
         if (EVP_DigestInit_ex(context, EVP_md5(), nullptr) != 1) {
             EVP_MD_CTX_free(context);
+            return;
         }
     }
     else if(strcmp(type, "-sha1") == 0){
         chosen_hash = "SHA-1";
         if (EVP_DigestInit_ex(context, EVP_sha1(), nullptr) != 1) {
             EVP_MD_CTX_free(context);
+            return;
         }
     }
     else{
         cout << "[*] Invalid hash, closing program...";
+        EVP_MD_CTX_free(context);
+        return;
+    }
+
+    if (context == nullptr) {
+        cout << "[*] Failed to create hash context.";
+        return;
     }
 
     if (EVP_DigestUpdate(context, data, length) != 1) {
         EVP_MD_CTX_free(context);
+        return;
     }
 
     unsigned char hash[EVP_MAX_MD_SIZE];
@@ -46,6 +57,7 @@ void calculate_hash(const unsigned char* data, size_t length, char type[]) {
 
     if (EVP_DigestFinal_ex(context, hash, &hash_length) != 1) {
         EVP_MD_CTX_free(context);
+        return;
     }
 
     EVP_MD_CTX_free(context);
@@ -59,7 +71,15 @@ void calculate_hash(const unsigned char* data, size_t length, char type[]) {
 
 int main (int argc, char *argv[]){
 
-    if(strcmp(argv[1], "-h") == 0){
+    if(argc < 4 || argc > 4){
+        cout << "[*] Missing Arguments: (-f <filepath>) or -<hashtype>\n";
+        cout << "[*] Valid Syntax: Filehasher.exe -f <filepath> -<hashtype>\n";
+        cout << "[*] supported hash types: md5, sha1, sha256\n";
+        return 0;
+    }
+    
+    // Checking if C strings are equal to each other
+    else if(strcmp(argv[1], "-h") == 0){
         cout << "Flags: \n\n";
         cout << "-f : Specifies the path to the file you wish to hash\n";
         cout << "-sha256 : calculate the SHA-256 hash of a file\n";
@@ -68,14 +88,7 @@ int main (int argc, char *argv[]){
         cout << "[*] Valid Syntax: Filehasher.exe -f <filepath> -<hashtype>\n";
         return 0;
     }
-    else if(argc < 4 || argc > 4){
-        cout << "[*] Missing Arguments: (-f <filepath>) or -<hashtype>\n";
-        cout << "[*] Valid Syntax: Filehasher.exe -f <filepath> -<hashtype>\n";
-        cout << "[*] supported hash types: md5, sha1, sha256\n";
-        return 0;
-    }
 
-    // Checking if our C strings are equal to each other
     else if(strcmp(argv[1], "-f") == 0){
         string File = argv[2];
         string FileText;
@@ -84,7 +97,7 @@ int main (int argc, char *argv[]){
         // Making sure the file exists
         if(file_exists(File)){
             
-            // Telling our ifstream to read open it in binary mode
+            // Telling our ifstream to read it in binary mode
             ifstream ReadFile(File, ios::binary);
                 
             // Calculating size in bytes of the binary
