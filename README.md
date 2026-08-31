@@ -30,16 +30,19 @@ Filehasher.exe -h
 **Run FileHasher from another directory:**
 `C:\Tools\Filehasher\Filehasher.exe -f "C:\Users\User\Desktop\test.exe" -sha1`
 
-## Requirements
+## Installation
 
-- A C++ compiler, such as MinGW-w64
-- OpenSSL installed on your system (Install it [here](https://slproweb.com/products/Win32OpenSSL.html))
-- A Windows x64 system
-
-FileHasher uses the OpenSSL EVP API for calculating file hashes.
-
-## Download:
-You can download the binary here: https://github.com/J-4O4/Simple-Cpp-Filehasher/releases/tag/v1.0
+The Filehasher is built for Windows x64 systems.
+To run the pre-compiled version, download the repository as a ZIP file and extract it. Please download the entire repository rather than only the .exe file, as the required runtime files are included in the repository.
+If you want to run Filehasher from anywhere in your terminal, you can add the extracted folder containing Filehasher.exe to your system's PATH environment variable.
+Filehasher uses the OpenSSL EVP API for calculating file hashes. If you want to build Filehasher from source, you will need a C++ compiler and any OpenSSL 3.x installed.
 
 ## License
+
 The Filehasher source code is licensed under the MIT license included in this repository. See [LICENSE](https://github.com/J-4O4/Simple-Cpp-Filehasher/blob/main/LICENSE) for the full license text. 
+
+### Third-Party Software
+
+Filehasher uses OpenSSL's libcrypto library for hash calculations.
+OpenSSL is licensed under the Apache License 2.0.
+See [LICENSE-OpenSSL]([LICENSE-OpenSSL](https://github.com/J-4O4/Simple-Cpp-Filehasher/blob/main/LICENSE-OpenSSL.txt))
