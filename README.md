@@ -31,7 +31,6 @@ Filehasher.exe -h
 `C:\Tools\Filehasher\Filehasher.exe -f "C:\Users\User\Desktop\test.exe" -sha1`
 
 ## Requirements
-To build FileHasher from source, you need:
 
 - A C++ compiler, such as MinGW-w64
 - OpenSSL installed on your system (Install it [here](https://slproweb.com/products/Win32OpenSSL.html))
