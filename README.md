@@ -25,9 +25,6 @@ Filehasher.exe -h
 `Filehasher.exe -f test.exe -sha256`
 
 **Run Filehasher from another directory using its full path:**
-`path/to/Filehasher.exe -f path/test.exe -md5`
-
-**Run FileHasher from another directory:**
 `C:\Tools\Filehasher\Filehasher.exe -f "C:\Users\User\Desktop\test.exe" -sha1`
 
 ## Installation
@@ -49,4 +46,4 @@ The Filehasher source code is licensed under the MIT license included in this re
 Filehasher uses OpenSSL's libcrypto library for hash calculations.
 
 OpenSSL is licensed under the Apache License 2.0.
-See [LICENSE-OpenSSL]([LICENSE-OpenSSL](https://github.com/J-4O4/Simple-Cpp-Filehasher/blob/main/LICENSE-OpenSSL.txt))
+See [LICENSE-OpenSSL](https://github.com/J-4O4/Simple-Cpp-Filehasher/blob/main/LICENSE-OpenSSL.txt)
